@@ -16,11 +16,7 @@ import { styled } from "@mui/material/styles";
 import {
   Brightness4,
   Brightness7,
-  Create,
   Home,
-  Logout,
-  Person2,
-  Settings,
   ShoppingCart,
 } from "@mui/icons-material";
 
