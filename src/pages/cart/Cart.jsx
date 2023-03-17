@@ -1,7 +1,17 @@
-import { Box, Paper, Button, styled, IconButton, Badge, Typography, Divider, Stack } from "@mui/material";
+import {
+  Box,
+  Paper,
+  Button,
+  styled,
+  IconButton,
+  Badge,
+  Typography,
+  Divider,
+  Stack,
+} from "@mui/material";
 import "./Cart.css";
 import React from "react";
-import { Add, Delete, Remove, TramSharp } from "@mui/icons-material";
+import { Add, Delete, Remove } from "@mui/icons-material";
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
     backgroundColor: "#1976d2",
@@ -40,14 +50,21 @@ export default function MyCart() {
           <Delete color="error" />
         </IconButton>
       </Paper>
-      <Paper sx={{width:"50%",mx:"auto"}}>
-        <Typography sx={{py:2,textAlign:"center"}} variant="h5" >card summery</Typography>
-        <Divider/>
-        <Stack direction='row' sx={{justifyContent:"space-between",py:2,px:1}}>
+      <Paper sx={{ width: "50%", mx: "auto" }}>
+        <Typography sx={{ py: 2, textAlign: "center" }} variant="h5">
+          card summery
+        </Typography>
+        <Divider />
+        <Stack
+          direction="row"
+          sx={{ justifyContent: "space-between", py: 2, px: 1 }}
+        >
           <Typography variant="body1">subTotal</Typography>
           <Typography variant="body1">$1000</Typography>
         </Stack>
-        <Button fullWidth variant="contained">checkout</Button>
+        <Button fullWidth variant="contained">
+          checkout
+        </Button>
       </Paper>
     </Box>
   );
