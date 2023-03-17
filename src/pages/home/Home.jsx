@@ -1,42 +1,45 @@
 import { Box } from "@mui/system";
 import "./Home.css";
 import React from "react";
-import { Paper, Typography, IconButton } from "@mui/material";
-import { Close } from "@mui/icons-material";
-
+import { Typography, useTheme, IconButton, Button } from "@mui/material";
+import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
+import Card from "@mui/material/Card";
+import CardHeader from "@mui/material/CardHeader";
+import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
+import Avatar from "@mui/material/Avatar";
+import { red } from "@mui/material/colors";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ShareIcon from "@mui/icons-material/Share";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+// import { useTheme } from "@emotion/react";
 const Home = () => {
+  const theme = useTheme();
   return (
     <Box>
-      <Paper
-        sx={{
-          position: "relative",
-          width: "366px",
-          display: "flex",
-          justifyContent: "space-between",
-          mt: "22px",
-          pt: "27px",
-          pb: "7px",
-        }}
-      >
-        <Typography sx={{ ml: "16px", fontSize: "1.3em" }} variant="h6">
-          GYM
-        </Typography>
-        <Typography
-          sx={{
-            mr: "33px",
-            fontWeight: 500,
-            fontSize: "1.4em",
-            opacity: "0.8",
-          }}
-          variant="h6"
-        >
-          $100
-        </Typography>
-
-        <IconButton sx={{ position: "absolute", top: "0", right: "0" }}>
-          <Close sx={{ fontSize: "20px" }} />
-        </IconButton>
-      </Paper>
+      <Card sx={{ maxWidth: 277 ,mx:2,mb:6}}>
+        <CardMedia
+          component="img"
+          height="194"
+          image="/static/images/cards/paella.jpg"
+          alt="Paella dish"
+        />
+        <CardContent>
+          <Typography variant="body2" color="text.secondary">
+            This impressive paella is a perfect party dish and a fun meal to
+            cook together with
+          </Typography>
+        </CardContent>
+        <CardActions sx={{justifyContent:"space-between"}} disableSpacing>
+          <Button sx={{textTransform:'capitalize'}} variant="contained" color="primary">
+            Add to Cart
+          </Button>
+          <Typography sx={{mr:1}} variant="body1" color={theme.palette.error.main}>
+            $ 100
+          </Typography>
+        </CardActions>
+      </Card>
     </Box>
   );
 };
