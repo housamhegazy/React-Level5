@@ -15,7 +15,8 @@ const Home = () => {
   const theme = useTheme();
   const { data, error, isLoading } = useGetproductsByNameQuery();
   const dispatch = useDispatch();
-
+  // @ts-ignore
+  const { selectedProducts } = useSelector((state) => state.carttt);
   if (error) {
     return <Box>error...............</Box>;
   }
@@ -59,12 +60,33 @@ const Home = () => {
                   onClick={() => {
                     dispatch(addToCart(item));
                   }}
-                  sx={{ textTransform: "capitalize", lineHeight: 1 }}
+                  sx={{
+                    display: selectedProducts.find(
+                      (product) => product.id === id
+                    )
+                      ? "none"
+                      : "block",
+                    textTransform: "capitalize",
+                    lineHeight: 1,
+                  }}
                   variant="contained"
                   color="primary"
                 >
                   Add to Cart
                 </Button>
+                {/* <Button
+                  sx={{
+                    display: selectedProducts.find(
+                      (product) => product.id === id
+                    )
+                      ? "block"
+                      : "none",
+                    textTransform: "capitalize",
+                    lineHeight: 1,
+                  }}
+                >
+                  hello
+                </Button> */}
                 <Typography
                   sx={{ mr: 1 }}
                   variant="body1"

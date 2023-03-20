@@ -49,7 +49,7 @@ export default function MyCart() {
               >
                 <Add />
               </IconButton>
-              <StyledBadge badgeContent={1} color="secondary" />
+              <StyledBadge badgeContent={item.Quantity} color="secondary" />
               <IconButton
                 onClick={() => {
                   dispatch(decreaseQuantity(item));
@@ -83,7 +83,7 @@ export default function MyCart() {
           </Paper>
         );
       })}
-      <Paper sx={{ width: "50%", mx: "auto" }}>
+      <Paper sx={{ width: "200px", mx: "auto" }}>
         <Typography sx={{ py: 2, textAlign: "center" }} variant="h5">
           card summery
         </Typography>
