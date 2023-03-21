@@ -29,10 +29,11 @@ export default function MyCart() {
   // @ts-ignore
   const { selectedProducts } = useSelector((state) => state.carttt);
   const dispatch = useDispatch();
-
+  let totalPrice = 0;
   return (
     <Box>
       {selectedProducts.map((item) => {
+        totalPrice += item.price * item.Quantity;
         return (
           <Paper key={item.id} dir="rtl" className="item-container">
             <div className="img-title-parent">
@@ -60,7 +61,7 @@ export default function MyCart() {
               </IconButton>
             </div>
 
-            <div className="price">$ {item.price}</div>
+            <div className="price">$ {item.price * item.Quantity}</div>
             {}
             <Button
               onClick={() => {
@@ -93,7 +94,7 @@ export default function MyCart() {
           sx={{ justifyContent: "space-between", py: 2, px: 1 }}
         >
           <Typography variant="body1">subTotal</Typography>
-          <Typography variant="body1">$1000</Typography>
+          <Typography variant="body1">${totalPrice}</Typography>
         </Stack>
         <Button fullWidth variant="contained">
           checkout
