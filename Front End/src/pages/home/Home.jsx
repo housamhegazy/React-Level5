@@ -22,6 +22,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { addToCart, decreaseQuantity, increaseQuantity } from "Redux/cartSlice";
 import { Add, Remove } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
     backgroundColor: "#1976d2",
@@ -127,6 +128,7 @@ const Home = () => {
                     variant="contained"
                     color="primary"
                   >
+                    <ShoppingCartIcon/>
                     Add to Cart
                   </Button>
                 )}
