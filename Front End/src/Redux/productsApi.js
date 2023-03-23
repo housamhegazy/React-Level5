@@ -15,7 +15,7 @@ export const productsApi = createApi({
 // get only one product
 export const oneproductsApi = createApi({
   reducerPath: 'oneproductsApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:5000/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://react-level5-plfb.onrender.com/' }),
   endpoints: (builder) => ({
     getoneproductsByName: builder.query({
       query: (name) => `products/${name}`,
