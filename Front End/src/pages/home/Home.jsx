@@ -16,7 +16,6 @@ import CardActions from "@mui/material/CardActions";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import {
-  productsApi,
   useGetproductsByNameQuery,
 } from "../../Redux/productsApi";
 import { useSelector, useDispatch } from "react-redux";
