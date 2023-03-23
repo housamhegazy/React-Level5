@@ -1,11 +1,11 @@
-import Colors from "./Colors";
+
 import { DetailsThumb } from "./DetailsThumb";
 import "./productDetails.css";
 import { useGetoneproductsByNameQuery } from "../../Redux/productsApi";
 import React, { useRef } from "react";
 import { useParams } from "react-router-dom";
 import { Remove, Add } from "@mui/icons-material";
-import {  styled, useTheme, Badge, Button, IconButton, Box, CircularProgress } from "@mui/material";
+import {  styled, Badge, Button, IconButton, Box, CircularProgress } from "@mui/material";
 import { decreaseQuantity, increaseQuantity, addToCart } from "Redux/cartSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
@@ -48,6 +48,8 @@ export default function OneProduct() {
     }
     images[index].className = "active";
   };
+
+
   if (error) {
     return <Box>error...............</Box>;
   }
