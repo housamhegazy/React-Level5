@@ -11,7 +11,7 @@ import MyCart from "pages/cart/Cart";
 
 
 import NotFound from "./pages/NotFound";
-import OneProduct from "pages/oneProduct/OneProduct";
+import OneProduct from "pages/oneProduct/productDetails";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

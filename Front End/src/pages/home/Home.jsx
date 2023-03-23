@@ -34,7 +34,7 @@ const Home = () => {
   const { data, error, isLoading } = useGetproductsByNameQuery();
   const dispatch = useDispatch();
   const navigate = useNavigate()
-  const { selectedProducts, selectedProductsID } = useSelector(
+  const { selectedProducts } = useSelector(
     // @ts-ignore
     (state) => state.carttt
   );
@@ -67,17 +67,18 @@ const Home = () => {
 
           return (
             <Card
-            onClick={()=>{
-              navigate(`oneproduct/${id}`)
-            }}
+            
               key={id}
               sx={{ maxWidth: 277, mx: 2, mb: 6 }}
               className="productCard"
             >
               <CardMedia
+              onClick={()=>{
+                navigate(`oneproduct/${id}`)
+              }}
                 component="img"
                 height="194"
-                image={imageLink}
+                image={imageLink[0]}
                 alt="Paella dish"
               />
               <CardContent>
