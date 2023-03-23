@@ -17,7 +17,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 
-export default function OneProduct() {
+export default function ProductDetails() {
   let userId = useParams();
   const { data, error, isLoading } = useGetoneproductsByNameQuery(
     Number(userId.productId)

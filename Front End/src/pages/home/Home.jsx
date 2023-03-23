@@ -73,7 +73,7 @@ const Home = () => {
             >
               <CardMedia
               onClick={()=>{
-                navigate(`oneproduct/${id}`)
+                navigate(`product-details/${id}`)
               }}
                 component="img"
                 height="194"

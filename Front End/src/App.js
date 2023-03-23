@@ -11,14 +11,14 @@ import MyCart from "pages/cart/Cart";
 
 
 import NotFound from "./pages/NotFound";
-import OneProduct from "pages/oneProduct/productDetails";
+import ProductDetails from "pages/oneProduct/productDetails";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
       <Route index element={<Home />} />
       <Route path="cart" element={<MyCart />} />
-      <Route path="oneproduct/:productId" element={<OneProduct />} />
+      <Route path="product-details/:productId" element={<ProductDetails />} />
 
       <Route path="*" element={<NotFound />} />
 
