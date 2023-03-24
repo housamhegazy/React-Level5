@@ -29,7 +29,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     color: "white",
   },
 }));
-const Home = () => {
+const Home = () => {  
   const theme = useTheme();
   const { data, error, isLoading } = useGetproductsByNameQuery();
   const dispatch = useDispatch();
